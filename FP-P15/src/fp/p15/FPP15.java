@@ -16,27 +16,27 @@ public class FPP15 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // CREACION DE MATRIZ Y VARIABLES
         int[][] matriz=new int[11][11];
         matriz=Datos(matriz);
         mostrar(matriz);
     }
    
-    public static int [][] Datos (int[][] vec){
+    public static int [][] Datos (int[][] vec){//METODO PARA INTRODUCIR NUMEROS ALEATORIOS EN CADA MATRIZ
 Random ran = new Random();
 for(int i=0;i<vec.length;i++){
 for(int j=0;j<vec.length;j++){
 if(j==10){
 int s=0;
 for(j=0;j<vec.length-1;j++){
-s = vec[i][j]+s;
+s = vec[i][j]+s;//SUMA DE COLUMNAS
 }
 vec[i][j]=s;
 } else vec[i][j]=ran.nextInt(100+1);
 if(i==10){
 int s=0;
 for(i=0;i<vec.length-1;i++){
-s = vec[i][j]+s;
+s = vec[i][j]+s;//SUMA DE FILAS
 }
 vec[i][j]=s;
 }
@@ -44,7 +44,7 @@ vec[i][j]=s;
 }
 return vec;
 }
-public static void mostrar(int[][] vec){
+public static void mostrar(int[][] vec){//MOSTRAR NUMEROS EN MATRICES CON LAS SUMAS
 for(int i=0;i<vec.length;i++){
 for(int j=0;j<vec.length;j++){
 System.out.print(vec[i][j]+"\t");
